@@ -15,7 +15,7 @@ import java.util.List;
 public class Role {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "role_id")
     private Long id;
 
     @Column(name = "name")

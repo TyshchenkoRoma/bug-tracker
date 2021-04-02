@@ -33,6 +33,4 @@ public class TestRepository {
     public Long count() {
         return jdbcTemplate.queryForObject("select count(*) from user", Long.class);
     }
-
-
 }

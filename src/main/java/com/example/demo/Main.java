@@ -21,9 +21,9 @@ public class Main {
 
     @PostConstruct
     public void exequteQuerry() {
-        abstractRespository.create(new User(1L,"roma", "tysh", "1@1.com", new Role("Role name 1 ")));
-        abstractRespository.create(new User(2L, "roma2", "tysh2", "2@1.com", new Role("Role name 2 ")));
-        abstractRespository.create(new User(3L, "roma3", "tysh3", "3@1.com", new Role("Role name 3 ")));
+        abstractRespository.create(new User("roma", "tysh", "1@1.com", new Role("Role name 1 ")));
+        abstractRespository.create(new User( "roma2", "tysh2", "2@1.com", new Role("Role name 2 ")));
+        abstractRespository.create(new User( "roma3", "tysh3", "3@1.com", new Role("Role name 3 ")));
         abstractRespository.getAll().stream().forEach(System.out::println);
     }
 }
