@@ -1,12 +1,28 @@
 package com.example.demo;
 
+import com.example.demo.entity.User;
+import com.example.demo.repository.AbstractRespository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class Main {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
-	}
+    @Autowired
+    AbstractRespository abstractRespository;
+
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
+
+    @PostConstruct
+    public void exequteQuerry() {
+        abstractRespository.create(new User(3,"roma", "tysh", "1@1.com"));
+        abstractRespository.create(new User("roma2", "tysh2", "2@1.com"));
+        abstractRespository.create(new User("roma3", "tysh3", "3@1.com"));
+        abstractRespository.getAll().stream().forEach(System.out::println);
+    }
 }
