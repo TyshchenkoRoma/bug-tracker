@@ -3,8 +3,8 @@ create table user
     id  int auto_increment primary key,
     first_name varchar(25) not null,
     last_name  varchar(25) not null,
-    email      varchar(50) not null,
---     role_id int null
+    email      varchar(50) not null
+#     role_id int null
 --     constraint user_role_id
 --         foreign key (role_id) references role (id)
 );

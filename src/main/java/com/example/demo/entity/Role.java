@@ -15,16 +15,16 @@ import java.util.List;
 public class Role {
 
     @Id
-    @Column(name = "role_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
     private String name;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "role",
-            joinColumns = @JoinColumn(name = "id")
-    )
+    @JoinTable(name = "action_points_roles",
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "action_point_id"))
     private List<ActionPoint> actionPoints;
 
     public Role(String name) {
