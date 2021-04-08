@@ -10,6 +10,7 @@ class HW7 implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("Called postProcessBeforeInitialization() for: " + beanName);
+
         return null;
     }
 }
