@@ -14,9 +14,6 @@ public class Main {
     @Autowired
     AbstractRespository abstractRespository;
 
-    @Autowired
-    HW7 hw7;
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
