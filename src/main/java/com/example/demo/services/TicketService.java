@@ -11,5 +11,5 @@ public interface TicketService {
 
     void create(Ticket ticket);
 
-    void delete(int id);
+    void delete(Long id);
 }

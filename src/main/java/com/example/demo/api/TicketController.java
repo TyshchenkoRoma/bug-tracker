@@ -37,7 +37,7 @@ public class TicketController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete (@PathVariable int id) {
+    public void delete (@PathVariable Long id) {
         ticketService.delete(id);
     }
 }

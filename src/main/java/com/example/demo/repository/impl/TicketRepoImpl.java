@@ -31,8 +31,14 @@ public class TicketRepoImpl implements TicketRepository {
     }
 
     @Override
-    public void remove(int id) {
-        Ticket ticket = entityManager.find(Ticket.class, id);
-        ticket.setStatus("DELETED");
+  //  @Query("update Ticket t set t.status = 'DELETED' where t.id = tId")
+    public void remove(Long tId) {
+        Ticket ticket = entityManager.find(Ticket.class, tId);
+         ticket.setStatus("DELETED");
+//        entityManager
+//                .createQuery("update Ticket t set t.status = 'DELETED' where t.id = tId")
+//                .executeUpdate();
+//          entityManager.refresh(ticket);
+
     }
 }

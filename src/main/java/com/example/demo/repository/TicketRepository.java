@@ -12,5 +12,5 @@ public interface TicketRepository {
 
     void create(Ticket ticket);
 
-    void remove(int id);
+    void remove(Long id);
 }
