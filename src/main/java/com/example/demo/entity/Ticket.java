@@ -49,19 +49,3 @@ public class Ticket {
     @Column(name = "ticket_type")
     TicketType ticketType;
 }
-
-//    Добавить контроллеры для сущности Ticket, которые следуют соглашению REST.
-//        Реализовать:
-//
-//        Добавление нового тикета через контроллер
-//        Получить все тикеты в системе через контроллер
-//        Получить один тикет по его id в базе
-//        Удалить тикет по его id в базе (методом soft delete, то есть нужно установить статус у тикета DELETED, физически не удаляем запись)
-//
-//        Привести все классы 3-tiered architecure:
-//        https://openclassrooms.com/en/courses/5684146-create-web-applications-efficiently-with-the-spring-boot-mvc-framework/6156961-organize-your-application-code-in-three-tier-architecture
-//
-//        Controller --> Service --> Repository
-//        НЕ ИСПОЛЬЗОВАТЬ КЛАССЫ ModelAndView, Model etc. все что относится к Spring MVC.
-
-
