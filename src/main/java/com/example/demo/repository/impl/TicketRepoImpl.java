@@ -15,7 +15,7 @@ public class TicketRepoImpl implements TicketRepository {
     EntityManager entityManager;
 
     @Override
-    public Ticket getById(int id) {
+    public Ticket getById(Long id) {
         return entityManager.find(Ticket.class, id);
     }
 

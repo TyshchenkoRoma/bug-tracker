@@ -3,6 +3,7 @@ package com.example.demo.api;
 import com.example.demo.entity.Ticket;
 import com.example.demo.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,10 +16,14 @@ public class TicketController {
     TicketService ticketService;
 
     @GetMapping("/{id}")
-    public Ticket getById(@PathVariable int id) {
+    public ResponseEntity <Ticket> getById(@PathVariable Long id) {
 
-        return ticketService.getById(id);
-    }
+        Ticket ticket = ticketService.getById(id);
+        if (ticket == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(ticket);
+        }    }
 
     @GetMapping()
     public List<Ticket> getAllTickets() {
