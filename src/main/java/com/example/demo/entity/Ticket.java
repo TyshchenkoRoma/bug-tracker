@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -10,13 +11,9 @@ import java.util.Date;
 @AllArgsConstructor
 @lombok.Data
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "ticket")
-public class Ticket {
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Ticket extends AbstractEntity {
 
     @Column(name = "name")
     private String name;
