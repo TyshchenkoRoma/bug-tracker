@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.AOP.LogExecutionTime;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,6 +31,7 @@ public class TestRepository {
         insertData.execute(params);
     }
 
+    @LogExecutionTime
     public Long count() {
         return jdbcTemplate.queryForObject("select count(*) from user", Long.class);
     }

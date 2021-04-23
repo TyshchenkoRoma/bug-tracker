@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -11,12 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "role")
-public class Role {
-
-    @Id
-    @Column(name = "id")
-    private Long id;
+public class Role extends AbstractEntity {
 
     @Column(name = "name")
     private String name;
